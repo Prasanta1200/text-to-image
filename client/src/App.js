@@ -9,7 +9,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/generate-image', { text }, { responseType: 'arraybuffer' });
+      const response = await axios.post('https://text-to-image-vh1q.onrender.com/generate-image', { text }, { responseType: 'arraybuffer' });
       const imageSrc = URL.createObjectURL(new Blob([response.data]));
       setImageSrc(imageSrc);
       setError(null);
